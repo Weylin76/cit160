@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripture</title>
+    <script>
+        function applyScripture() {
+            let name = document.getElementById("nameInputBox").value;
+
+            let scripture =
+                `For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. Which includes ${name.toUpperCase()}!`
+            document.getElementById("output").innerHTML = scripture;
+        }
+    </script>
+
+</head>
+
+<body>
+    Please enter your name: <input type="text" id="nameInputBox">
+    <button type="button" onclick="applyScripture()">Click for Message!</button>
+    <div id="output"></div>
+</body>
+
+</html>

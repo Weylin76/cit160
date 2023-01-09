@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power Table</title>
+    <script>
+        /* Defining Table
+         * Input: push button
+         * Processing: calculates all powers of 2
+         * Output: Gets power table
+         */
+
+        function powerFunction() {
+            let output = "";
+            for (let i = 0; i <= 31; i++) {
+                output += "2 ^ " + i + " = " + (2 ** i) + "<br>";
+            }
+            document.getElementById("outputDiv").innerHTML = output;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>The Power Table</h1>
+    <button onclick="powerFunction()" type="button">Submit for Table</button>
+    <div id="outputDiv"></div>
+</body>
+
+</html>

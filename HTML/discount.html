@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+    <script>
+        //Defining table
+        //Inputs: customoer subtotal and day of week
+        //Processing:If Tuesday or Wendesday and subtotal >= $50 then 10% discount, else normal price, then apply 6% tax.
+        //Outputs: Customer final price
+        function finalPrice() {
+            let day = new Date().getDay();
+            let subtotal = parseFloat(document.getElementById('input').value);
+            let grandTotal = 0
+            if ((day == 2 || day == 3) && subtotal > 50) {
+                grandTotal = subtotal * .9 * 1.06
+            } else {
+                grandTotal = subtotal * 1.06
+            }
+            document.getElementById('output').innerHTML = grandTotal.toFixed(2);
+        }
+    </script>
+</head>
+
+<body>
+    <p>Enter in subtotal</p><input type="text" Id="input">
+    <button type="button" onclick="finalPrice()">Calucate</button>
+    <p>Grand Total</p>
+    $<div id="output" style="display: inline;"></div>
+
+</body>
+
+</html>

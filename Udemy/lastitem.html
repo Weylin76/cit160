@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last item in list</title>
+    <script>
+        /* Defining Table
+         * Input: no user input
+         * Processing: Test the addEnds and getMiddle functions by calling them.
+         * Output: The values returned from the addEnds and getMiddle functions.
+         */
+        function test() {
+            let list1 = [17, 8, 9, 5, 20];
+            let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+            // Test the addEnds function by calling it two times.
+            let lastitem1 = getLast(list1);
+            let lastitem2 = getLast(list2);
+
+
+            // Build a string to display to the user.
+            let output =
+                lastitem1 + '<br>' +
+                lastitem2
+
+            // Display the output string for the user to see.
+            document.getElementById('output').innerHTML = output;
+
+
+            function getLast(list) {
+                let value = list[list.length - 1]
+                return value
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="output"></div>
+    <button onclick="test()">get last item</button>
+</body>
+
+</html>

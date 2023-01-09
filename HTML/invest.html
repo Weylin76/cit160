@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest</title>
+    <style>
+        body {
+            width: 550px;
+            margin: 0 auto;
+            text-align: right;
+            background-color: paleturquoise;
+        }
+
+        h1 {
+
+            font-weight: 800;
+            text-shadow: 1.5px 1.4px #6c77bc;
+
+        }
+
+        p,
+        input {
+            display: inline;
+            margin: 5px;
+            padding: 5px;
+            font-size: large;
+            font-weight: 700;
+        }
+
+        button {
+            border-radius: 10px;
+            font-size: medium;
+            background-color: black;
+            color: white;
+        }
+
+        div {
+            margin: 5px;
+            padding: 5px;
+            font-size: x-large;
+            font-weight: 700;
+        }
+    </style>
+    <script>
+        //Inputs: Principal, annaual rate, number of years, peroids per payment.
+        //Processing: calculate the future value.
+        //Outputs: Future value of investment.
+        function doFV() {
+            let principal = parseFloat(document.getElementById("principal").value);
+            let annualRate = parseFloat(document.getElementById("annualRate").value);
+            let years = parseFloat(document.getElementById("years").value);
+            let periodsPerYear = parseFloat(document.getElementById("periodsPerYear").value);
+
+            let futureValue = computeFutureValue(principal, annualRate, years, periodsPerYear);
+
+            document.getElementById("output").innerHTML =
+                `$${futureValue.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+        }
+
+        function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+            return principal * Math.pow((1 + (annualRate / periodsPerYear)), (years * periodsPerYear));
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Investment Calculator</h1>
+    <p>Amount invested (principal)</p><input type="number" id="principal"><br>
+    <p>Annual rate (example: .08)</p><input type="number" id="annualRate"><br>
+    <p>Number of years</p><input type="number" id="years"><br>
+    <p>Peroids per year</p><input type="number" id="periodsPerYear"><br>
+    <button type="button" onclick="doFV()">Calculate Future Value</button>
+    <div id="output"></div>
+</body>
+
+</html>

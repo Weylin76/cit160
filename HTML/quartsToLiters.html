@@ -1,0 +1,70 @@
+<!-- In a file named quartsToLiters.html, write a defining table and a JavaScript program  -->
+<!-- that asks a user for a volume in quarts and then converts that value into liters.  -->
+<!-- Your program should correctly handle real numbers such as 7.54. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Quarts to Liters</title>
+    <style>
+        body {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: aqua;
+        }
+
+        #numQuarts {
+            padding: 5px;
+            max-width: 75px;
+            height: 25px;
+        }
+
+        #output {
+            border: 1px black solid;
+            max-width: 200px;
+            height: 25px;
+            margin-bottom: 15px;
+            padding: 5px;
+            color: yellow;
+            background-color: darkblue;
+        }
+
+        div {
+            font-size: larger;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: large;
+        }
+    </style>
+    <script>
+        /* Defining Table
+         * Input: Number of Quarts
+         *Process: Num0fQuarts/1.057
+         *OUtput: Number of Liters
+         */
+        function convert() {
+            let quarts = parseFloat(document.getElementById("numQuarts").value) / 1.057;
+            // let conversion = quarts / 1.057;
+            document.getElementById("output").innerHTML = quarts;
+        }
+    </script>
+</head>
+
+<body>
+    <H1>Convert Quarts to Liters</H1>
+    <form>
+        <p>Enter the Number of Quarts:</p> <input type="number" id="numQuarts">
+        <p>The number of Liters:</p>
+        <div id="output"></div>
+        <button type="button" onclick="convert()">Calucate</button>
+
+    </form>
+</body>
+
+</html>

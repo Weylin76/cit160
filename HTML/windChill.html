@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Chill</title>
+    <style>
+        body {
+            background-color: rgb(196, 202, 205);
+            color: rgb(0, 72, 255);
+            width: 170px;
+            margin: 0 auto;
+            font-weight: 700;
+        }
+
+        div {
+            margin: 10px 0 10px 0;
+        }
+
+        button {
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        //Defining Table
+        //input: current temperature & windspeed
+        //Processing:Math.round(35.74 + 0.6215 * temp - 35.75 * windSpeed ** 0.16 + 0.4275 * temp * windSpeed ** 0.16)
+        //Output: Feels like temperature (windchill)
+
+        function doInputOutput() {
+            let temp = parseFloat(document.getElementById("temp").value);
+            let windSpeed = parseFloat(document.getElementById("windSpeed").value);
+            let results = windChill(temp, windSpeed)
+            document.getElementById("output").innerHTML = results;
+        }
+
+        function windChill(temp, windSpeed) {
+            return Math.round(35.74 + 0.6215 * temp - 35.75 * windSpeed ** 0.16 + 0.4275 * temp *
+                windSpeed ** 0.16) + " " + "&deg;" + "F";
+        }
+    </script>
+</head>
+
+<body>
+    <div>Enter the current temperature in Fahrenheit</div><input type="number" id="temp"><br>
+    <div>Enter the current wind speed in miles per hour</div> <input type="number" id="windSpeed"><br>
+    <button type="button" onclick="doInputOutput()">Calculate Wind Chill</button>
+    <div id="output"></div>
+
+</body>
+
+</html>

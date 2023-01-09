@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            width: 300px;
+            margin: 0 auto;
+            font-size: x-large;
+            font-weight: 900;
+            background-color: blue;
+        }
+
+        h1 {
+            color: crimson
+        }
+
+        #today {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Digital Clock</h1>
+        <div id="today"></div>
+        <div id="output"></div>
+    </div>
+    <script>
+        // let dayOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+        let dayOfWeek = ""
+        let weekDayName = new Date();
+        let dayNum = weekDayName.getDay();
+        if (dayNum == 0) {
+            dayOfWeek = 'Sunday';
+        } else if (dayNum == 1) {
+            dayOfWeek = 'Monday';
+        } else if (dayNum == 2) {
+            dayOfWeek = 'Tuesday';
+        } else if (dayNum == 3) {
+            dayOfWeek = 'Wednesday';
+        } else if (dayNum == 4) {
+            dayOfWeek = 'Thursday';
+        } else if (dayNum == 5) {
+            dayOfWeek = 'Friday';
+        } else if (dayNum == 6) {
+            dayOfWeek = 'Saturday';
+        }
+
+        document.getElementById("today").innerHTML = dayOfWeek;
+
+
+        function dateTime() {
+            let today = new Date();
+            let day = today.getDate();
+            let month = today.getMonth() + 1;
+            let year = today.getFullYear();
+            let hour = today.getHours()
+            let minutes = today.getMinutes();
+            let seconds = today.getSeconds();
+            let currentDate = `${month}/${day}/${year} ${hour}:${minutes}:${seconds}`;
+
+            document.getElementById("output").innerHTML = currentDate;
+        }
+        setInterval(dateTime, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <script>
+        //Defining table
+        //inputs: computer clock
+        //process: get both time and day from computer clock:
+        //If weekday and not a holiday then display get up, else sleep in
+        //Outputs Get up or Sleep in
+        function alarm(event) {
+            let now = new Date(); //Current date.time
+            let month = now.getMonth() + 1; //1 for Jan, 2 for Feb etc.
+            let dayOfMonth = now.getDate(); //1 for 1st, 2 for 2nd etc 
+            let dayOfWeek = now.getDay() + 1; //1 for 1st, 2 for 2nd etc
+
+            if ((dayOfWeek == 1) || (dayOfWeek == 7) || (month == 1 && dayOfMonth == 1) ^ (month == 7 && dayOfMonth ==
+                    4) ^ (month == 12 && dayOfMonth == 25)) {
+                document.getElementById('output').innerHTML = 'Sleep in!';
+            } else {
+                document.getElementById('output').innerHTML = 'Get up!'; //Weekday and not a Holiday
+            }
+        };
+    </script>
+</head>
+
+<body onload="alarm()">
+    <div id="output"></div>
+</body>
+
+</html>

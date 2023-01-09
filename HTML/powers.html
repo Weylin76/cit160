@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powers of two!</title>
+    <style>
+        body {
+            background-color: skyblue;
+            color: rebeccapurple;
+            width: 170px;
+            margin: 0 auto;
+            font-weight: 900;
+        }
+
+        #output,
+        h1 {
+            background-color: #87CEEBee;
+        }
+    </style>
+    <script>
+        //Input - loop of numbers from 0 to 31 with a base of 2
+        //Processing - loop from 0 to 31
+        //Output - determine the value of 2 to the powers of 0 through 31
+
+        function powers() {
+            let results = ""
+            for (let i = 0; i <= 31; i++) {
+                if (i < 31) {
+                    results += Math.pow(2, i) + ", "
+                } else {
+                    results += Math.pow(2, i)
+                }
+            }
+            document.getElementById("output").innerHTML = results;
+
+        }
+
+        function superPowers() {
+            document.body.style.backgroundColor = "#f3f3f3";
+            document.body.style.backgroundImage =
+                "url('https://cdn.pixabay.com/photo/2017/07/06/18/48/superman-2478978__480.jpg')";
+            document.body.style.color = "darkgreen";
+        }
+    </script>
+</head>
+
+<body onload=powers()>
+    <h1>Power of 2's</h1>
+    <div id="output"></div>
+    <button type="button" onclick="superPowers()">Change background image</button>
+</body>
+
+</html>

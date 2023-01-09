@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Odd numbers</title>
+    <style>
+        body {
+            padding-top: 50px;
+            width: 800px;
+            margin: 0 auto;
+            background-color: aquamarine;
+            font-size: 24px;
+        }
+
+        h1 {
+            color: red;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            border-radius: 10rem;
+            padding: 5px;
+            margin-top: 5px;
+
+        }
+
+        div {
+            display: inline;
+        }
+    </style>
+    <script>
+        //Defining Table
+        //input: user enters a number
+        //processing: loop through all number up to user number and sum all odd numbers
+        //Sum of odd numbers
+        function sumOddNums() {
+            let usernum = parseInt(document.getElementById('input').value);
+            myarr = [];
+            let sum = 0
+            for (let i = 0; i <= usernum; i++) {
+                if (i % 2 == 1) {
+                    myarr.push(i);
+                    sum += i;
+                }
+            }
+
+            document.getElementById('output').innerHTML = sum;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Calculate Sum of Odd Numbers!</h1>
+    Enter an number: <input type="number" id="input"><br>
+    <div>Sum of odd numbers: </div><span id="output"></span><br>
+    <button type="button" onclick="sumOddNums()"> Calcuate Sum of Odd Numbers </button>
+
+
+</body>
+
+</html>

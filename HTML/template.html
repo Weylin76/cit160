@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+    <script>
+        function fun() {
+            let name = document.getElementById("personName").value;
+            let msg = `${name.toUpperCase()} are you ready for some fun?`;
+            document.getElementById("introPara").innerHTML = msg;
+        }
+
+        function red() {
+            document.body.style.background = 'red';
+        }
+
+        function green() {
+            document.body.style.background = 'green';
+        }
+
+        function yellow() {
+            document.body.style.background = 'yellow';
+        }
+
+        function pink() {
+            document.body.style.background = 'pink';
+        }
+
+        function white() {
+            document.body.style.background = 'white';
+        }
+    </script>
+</head>
+
+<body>
+    What is your name: <input type="text" id="personName">
+    <p id="introPara"></p>
+    <button type="button" onclick="fun()">Click here first!</button>
+    <button type="button" onclick="red()">Click for Red</button>
+    <button type="button" onclick="green()">Click for Green!</button>
+    <button type="button" onclick="yellow()">Click for Yellow!</button>
+    <button type="button" onclick="pink()">Click for Pink</button>
+    <button type="button" onclick="white()">Click for White</button>
+
+</body>
+
+</html>

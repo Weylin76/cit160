@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function run() {
+            // Style the main webpage:
+            document.body.style.backgroundColor = "grey";
+            document.body.style.textAlign = "center";
+
+            //Create a H1:
+            const h1 = document.createElement("h1");
+            h1.innerText = "Creating a website without HTML!";
+            h1.style.font = "italic bold 65px Courier";
+            document.body.appendChild(h1);
+
+            //Create a Div:
+            const div1 = document.createElement("div");
+            div1.setAttribute("id", "div1");
+            div1.innerText = "This is the first div!";
+            document.body.appendChild(div1);
+            div1.style.fontSize = "40px";
+            div1.style.color = "blue";
+
+            //Create a Paragraph:
+            const para1 = document.createElement("p");
+            para1.innerText = "This is a paragraph.";
+            para1.style.color = "green";
+            para1.style.fontSize = "35px";
+            document.getElementById("div1").appendChild(para1);
+
+            //Create a button 
+            const btn1 = document.createElement("button");
+            // btn1.style = "display:( block";
+            btn1.innerText = "Turn Aqua!";
+            btn1.style.width = "175px";
+            btn1.style.color = "yellow";
+            btn1.style.backgroundColor = "black";
+            btn1.style.borderRadius = "50px";
+            btn1.style.fontSize = '20px'
+            document.getElementById("div1").appendChild(btn1);
+            //Center button
+            btn1.style.position = "absolute";
+            btn1.style.left = "50%";
+            btn1.style.transform = "translateX(50%)";
+            //add button attributes
+            btn1.setAttribute("id", "btn1")
+            btn1.setAttribute("onmouseover", "ChangeBackgroundColor()")
+            btn1.setAttribute("onmouseleave", "RestoreBackgroundColor()")
+
+            //Create an Image:
+            const img1 = document.createElement("img");
+            img1.setAttribute("src",
+                "https://st4.depositphotos.com/1638040/29814/v/1600/depositphotos_298142870-stock-illustration-cartoon-illustration-happy-laptop-computer.jpg"
+            );
+            img1.setAttribute("alt", "Picture of a cartoon computer");
+            img1.style.width = "100px"
+            document.getElementById("div1").appendChild(img1);
+        }
+
+        function ChangeBackgroundColor() {
+            document.body.style.backgroundColor = "aqua";
+        }
+
+        function RestoreBackgroundColor() {
+            document.body.style.backgroundColor = "grey";
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

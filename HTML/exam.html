@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        p {
+            display: inline;
+        }
+    </style>
+    <script>
+        /* Input: starting number, ending number, and divisor
+         * Processing: start at the starting number and loop until the ending number than divide by divsor
+         * Output: all number that are evenly divided inclusive
+         */
+        function myfun() {
+            let num1 = parseInt(document.getElementById("start").value);
+            let num2 = parseInt(document.getElementById("end").value);
+            let divisor = parseInt(document.getElementById("divisor").value);
+
+            for (let i = num1; i <= num2; i++) {
+                let results = 0
+                if (i % divisor == 0) {
+                    results = i / divisor;
+                    const para1 = document.createElement("p");
+                    para1.innerHTML = `${i} `;
+                    document.getElementById("output").appendChild(para1);
+
+                }
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    Start: <input type="text" id="start" size="5"><br>
+    End: <input type="text" id="end" size="5"><br>
+    Divisor: <input type="text" id="divisor" size="5"><br>
+    <button type="button" onclick="myfun()">Click</button>
+    <div id="output"></div>
+</body>
+
+</html>

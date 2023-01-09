@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>footwear</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+        button {
+            display: block;
+        }
+
+        p {
+            display: inline;
+        }
+    </style>
+    <script>
+        // Defining Table:
+        // Input: User inputs: Hot, Rain, Snow, or any other input
+        // Processing: Evaluates weahter condition to determine shoe type (see output)
+        //Output: If hot = Sandals, rain = Galoshes, Snow = boots, other = shoes
+
+        function checkFootwear() {
+            let weather = document.getElementById("weatherCondition").value;
+            let footwear;
+            switch (weather.toLowerCase()) {
+                case weather = 'hot':
+                    footwear = 'sandals';
+                    document.getElementById("output").innerHTML = footwear.charAt(0).toUpperCase() + footwear.slice(1);
+                    break;
+                case weather = 'rain':
+                    footwear = 'galoshes';
+                    document.getElementById('output').innerHTML = footwear.charAt(0).toUpperCase() + footwear.slice(1);
+                    break;
+                case weather = 'snow':
+                    footwear = 'boots';
+                    document.getElementById('output').innerHTML = footwear.charAt(0).toUpperCase() + footwear.slice(1);
+                    break;
+                default:
+                    footwear = 'shoes';
+                    document.getElementById("output").innerHTML = footwear.charAt(0).toUpperCase() + footwear.slice(1);
+            }
+        }
+
+        function play() {
+            let weather = document.getElementById("weatherCondition").value
+            if (weather == 'rain') {
+                var audio = document.getElementById("audioRain");
+                audio.play();
+                const imgRain = document.createElement("img");
+                imgRain.setAttribute("src",
+                    "https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg"
+                );
+                imgRain.setAttribute("alt", "Picture of rain");
+                imgRain.style.width = "500px";
+                imgRain.style.display = "block";
+                document.getElementById("div1").appendChild(imgRain);
+            } else if (weather == 'snow') {
+                var audio = document.getElementById("audioSnow");
+                audio.play();
+                const imgSnow = document.createElement("img");
+                imgSnow.setAttribute("src",
+                    "https://img.freepik.com/free-photo/view-snowy-mountain-fir-trees-with-blue-sky-background_9083-8044.jpg?w=2000"
+                );
+                imgSnow.setAttribute("alt", "Picture of Snowy outside");
+                imgSnow.style.width = "500px";
+                imgSnow.style.display = "block";
+                document.getElementById("div1").appendChild(imgSnow);
+            } else if (weather == 'hot') {
+                var audio = document.getElementById("audioHot");
+                audio.play();
+                const imgSunny = document.createElement("img");
+                imgSunny.setAttribute("src",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH0_BVLLZgRsUMclyUah1P86v9AivzMOY1SQ&usqp=CAU"
+                );
+                imgSunny.setAttribute("alt", "Picture of Sunny outside");
+                imgSunny.style.width = "500px";
+                imgSunny.style.display = "block";
+                document.getElementById("div1").appendChild(imgSunny);
+            } else {
+                var audio = document.getElementById("audioOther");
+                audio.play();
+                const imgOther = document.createElement("img");
+                imgOther.setAttribute("src",
+                    "https://wallpapercave.com/wp/46IcIP8.jpg"
+                );
+                imgOther.setAttribute("alt", "Picture of outdoors");
+                imgOther.style.width = "500px";
+                imgOther.style.display = "block";
+                document.getElementById("div1").appendChild(imgOther);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <span>Enter Weather Conditions</span><input type="text" id="weatherCondition"><br>
+        <button type="button" onclick="checkFootwear(), play(), background()">Check Footwear Type</button>
+        <p>Appropriate footwear type:</p>
+        <p id="output"></p>
+        <audio id="audioRain" src="https://www.soundjay.com/nature/sounds/rain-01.mp3"></audio>
+        <audio id="audioSnow" src="https://www.soundjay.com/nature/sounds/footsteps-on-icy-ground-01.mp3"></audio>
+        <audio id="audioHot" src="https://www.soundjay.com/free-music/sounds/heart-of-the-sea-01.mp3"></audio>
+        <audio id="audioOther" src="https://www.soundjay.com/free-music/sounds/cautious-path-01.mp3"></audio>
+    </div>
+</body>
+
+</html>

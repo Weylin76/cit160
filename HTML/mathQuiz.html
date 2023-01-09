@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathQuiz</title>
+    <script>
+        // Defining Table
+        //Input: two numbers for the user and a math operation
+        //Processing: The math operation and a check if the user answer is correct.
+        //Output: The correct answer and if the user was correct or incorrect.
+        function doMath() {
+            let sign = document.getElementById("sign").value;
+            let userAnswer = parseFloat(document.getElementById("userAnswer").value);
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            if (sign == "+") {
+                let addition = num1 + num2
+                document.getElementById("corretAnswer").innerHTML = addition;
+                if (addition == userAnswer) {
+                    document.getElementById("msg").innerHTML = "Correct! Good job!"
+                    let message = document.getElementById("msg");
+                    message.style.color = "green";
+                    var audio = document.getElementById("correct");
+                    audio.play();
+
+                } else {
+                    document.getElementById("msg").innerHTML = "Incorrect! Try again!"
+                    let message = document.getElementById("msg");
+                    message.style.color = "red";
+                    var audio = document.getElementById("wrong");
+                    audio.play();
+                }
+            } else if (sign == "-") {
+                let subtraction = num1 - num2
+                document.getElementById("corretAnswer").innerHTML = subtraction;
+                if (subtraction == userAnswer) {
+                    document.getElementById("msg").innerHTML = "Correct! Good job!"
+                    let message = document.getElementById("msg");
+                    message.style.color = "green";
+                    var audio = document.getElementById("correct");
+                    audio.play();
+                } else {
+                    document.getElementById("msg").innerHTML = "Incorrect! Try again!"
+                    let message = document.getElementById("msg");
+                    message.style.color = "red";
+                    var audio = document.getElementById("wrong");
+                    audio.play();
+                }
+
+            } else if (sign == "*") {
+                let multiply = num1 * num2
+                document.getElementById("corretAnswer").innerHTML = multiply;
+                if (multiply == userAnswer) {
+                    document.getElementById("msg").innerHTML = "Correct! Good job!"
+                    let message = document.getElementById("msg");
+                    message.style.color = "green";
+                    var audio = document.getElementById("correct");
+                    audio.play();
+                } else {
+                    document.getElementById("msg").innerHTML = "Incorrect! Try again!"
+                    let message = document.getElementById("msg");
+                    message.style.color = "red";
+                    var audio = document.getElementById("wrong");
+                    audio.play();
+                }
+
+            } else if (sign == "/") {
+                let divide = num1 / num2
+                document.getElementById("corretAnswer").innerHTML = divide;
+                if (divide == userAnswer) {
+                    document.getElementById("msg").innerHTML = "Correct! Good job!"
+                    let message = document.getElementById("msg");
+                    message.style.color = "green";
+                    var audio = document.getElementById("correct");
+                    audio.play();
+                } else {
+                    document.getElementById("msg").innerHTML = "Incorrect! Try again!"
+                    let message = document.getElementById("msg");
+                    message.style.color = "red";
+                    var audio = document.getElementById("wrong");
+                    audio.play();
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Test Your Math Skills!</h1>
+    <input type="number" id="num1">
+    <select name="mathType" id="sign">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="num2">=
+    <input type="number" id="userAnswer">
+    <button onclick="doMath()" style="display: block;">Check</button>
+    <div id="corretAnswer"></div>
+    <div id="msg"></div>
+    <audio id="wrong" src="https://www.soundjay.com/mechanical/sounds/bomb-falling-and-exploding-01.mp3"></audio>
+    <audio id="correct" src="https://www.soundjay.com/free-music/sounds/barn-beat-01.mp3"></audio>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+</head>
+
+<body>
+    <h1>Guess the number</h1>
+    <p id="gameMsg"></p>
+    <div id="numGuesses"></div>
+
+    <script>
+        let maxNum = parseInt(prompt("Enter the max number to guess from:"));
+        let randomNum = parseInt(Math.floor(Math.random() * maxNum + 1));
+        let guess = prompt("Enter you guess:");
+        let counter = 1
+        while (parseInt(guess) !== randomNum) {
+            counter += 1;
+            if (parseInt(guess) > randomNum) {
+                guess = prompt("Your guess is too high.  Try again or q to quit");
+
+                if (guess.toLowerCase() === 'q') {
+                    break
+                };
+
+            } else if (parseInt(guess) < randomNum) {
+                guess = prompt("Your guess is too low.  Try again or q to quit");
+                if (guess.toLowerCase() === 'q') {
+                    break
+                };
+            }
+        }
+        if (guess.toLowerCase() === 'q') {
+            document.getElementById("gameMsg").innerHTML = "quitter!";
+        } else if (counter === 1) {
+            document.getElementById("gameMsg").innerHTML = "you win, Yeah!";
+            document.getElementById("numGuesses").innerHTML = `It took ${counter} guess!`
+        } else {
+            document.getElementById("gameMsg").innerHTML = "you win, Yeah!";
+            document.getElementById("numGuesses").innerHTML = `It took ${counter} guesses!`
+        }
+    </script>
+</body>
+
+</html>

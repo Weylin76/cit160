@@ -1,0 +1,82 @@
+<!-- In a file named mileage.html, write a defining table and a JavaScript program  -->
+<!-- to compute the mileage of a vehicle. Your program should allow the user to enter  -->
+<!-- the beginning and ending odometer readings and the number of gallons of gasoline  -->
+<!-- used and should output the mileage in miles per gallon. Your program should correctly  -->
+<!-- handle real numbers such as 7.54. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mileage</title>
+
+    <style>
+        body {
+            margin: 0 auto;
+            text-align: center;
+            background-color: black;
+            color: white;
+            font-size: x-large;
+        }
+
+        input {
+            height: 33px;
+            padding-left: 10px;
+        }
+
+        input:valid {
+            border-left: 10px solid green;
+        }
+
+        input:invalid {
+            border-left: 10px solid red;
+        }
+
+        button {
+            display: block;
+            margin: auto;
+            font-size: 30px;
+            background-color: yellow;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        /*Defining Table:
+         *Input: Starting and ending miles, number of gallons of gas used.
+         *Process: Distance = Ending miles - starting miles, and MPG = Distance/numOfGallonUsed
+         *Otuput: Distance, MPG
+         */
+        function calucateData() {
+            // define variables needed for calculation
+            const startingMiles = document.getElementById("beginning").value;
+            const endingMiles = document.getElementById("ending").value;
+            const numOfGallons = document.getElementById("gasUsed").value;
+
+            //calcuate the formulas
+            const totalMiles = parseFloat(endingMiles - startingMiles);
+            const numGallons = parseFloat(totalMiles / numOfGallons);
+
+            //append data to DOM
+            document.getElementById("milesDriven").innerHTML = totalMiles;
+            document.getElementById("mpg").innerHTML = numGallons;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Calculate Miles and MPG</h1>
+    <p>Enter the beginning odometer reading: </p> <input type="text" id="beginning" required="required" pattern="[0-9]+"
+        placeholder="Enter only numbers!">
+    <p>Enter the ending odometer reading: </p> <input type="text" id="ending" required="required" pattern="[0-9]+"
+        placeholder="Enter only numbers!">
+    <p>Enter the number of gallons of gasoline used: </p> <input type="text" id="gasUsed" required="required"
+        pattern="[0-9]+" placeholder="Enter only numbers!">
+    <p>Total Miles Driven</p><span id="milesDriven"></span>
+    <p>Miles per Gallon</p><span id="mpg"></span>
+    <button id="calBtn" onclick="calucateData()">Calucate Data</button>
+</body>
+
+</html>

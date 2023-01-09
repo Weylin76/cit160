@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game Show</title>
+    <style>
+        body {
+            background-color: rgba(158, 242, 245, 0.979);
+            color: darkblue;
+            margin: 0 auto;
+            width: 800px;
+            margin-top: 50px;
+            font-size: large;
+        }
+
+        button {
+            background-color: black;
+            color: yellow;
+            border-radius: 10rem;
+            display: block;
+            margin: 1rem;
+            font-size: larger;
+        }
+
+        img {
+            width: 500px;
+            height: 300px;
+            display: block;
+            margin-left: 7%;
+            margin-bottom: 10px;
+        }
+
+        div {
+            margin-top: 5px;
+            font-size: x-large;
+        }
+
+        span {
+            font-size: x-large;
+        }
+
+        .question {
+            color: red;
+            font-weight: 900;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Welcome to the JavaScript Game Show!</h1>
+    <img src="https://buzzideazz.com/wp-content/uploads/2019/03/gameshowlogofinal-1.jpg" alt="Game Show Image">
+
+    <button type="button" onclick="playerName()">Get Started</button>
+    <div>Player Name: </div>
+    <span id="playerNameOutput"></span><br>
+
+    <div>Score:</div>
+    <span id="scoreOutput"></span>
+
+    <h2>True of False Section</h2>
+
+    <h3>Q1</h3>
+    <div class="question">An Intergrated Circuit is a circuit of transistors, resistors, and capacitors, constructed on
+        a single
+        silicon wafer; sometimes called a chip.</div>
+    <input type="text" id="q1" placeholder="True or False">
+    <!-- <button type="button" onclick="main()">Check Answer</button> -->
+
+    <h3>Q2</h3>
+    <div class="question">A Diode stores electricity temporarily, somewhat like a miniature battery.</div>
+    <input type="text" id="q2" placeholder="True or False">
+    <!-- <button type="button" onclick="q2()">Check Answer</button> -->
+
+    <h3>Q3</h3>
+    <div class="question">Main Memory uses electric charge.</div>
+    <input type="text" id="q3" placeholder="True or False">
+    <!-- <button type="button" onclick="q3()">Check Answer</button> -->
+
+    <h3>Q4</h3>
+    <div class="question">A Petabyte is larger than a Terabyte.</div>
+    <input type="text" id="q4" placeholder="True or False">
+    <!-- <button type="button" onclick="q4()">Check Answer</button> -->
+
+    <h3>Q5</h3>
+    <div class="question">Sequence causes the computer to select one group of statements to execute and another group or
+        groups to skip.
+    </div>
+    <input type="text" id="q5" placeholder="True or False">
+    <!-- <button type="button" onclick="q5()">Check Answer</button> -->
+
+    <h3>Q6</h3>
+    <div class="question">The getElementById funciton find an element within an HTML document.</div>
+    <input type="text" id="q6" placeholder="True or False">
+    <!-- <button type="button" onclick="q6()">Check Answer</button> -->
+
+    <h2>Multiple Choice Section</h2>
+
+    <h3>Q7</h3>
+    <div class="question">In JavaScript what does the keyword let do? </div>
+    <div>
+        A. Reserve space in the computer's memory for a
+        variable.<br>
+        B. Store a value in a variable. <br>
+        C. Convert a number to text.<br>
+        D. Prompt the user for input.</div>
+
+    <input type="text" id="q7" placeholder="Enter the correct letter!">
+    <!-- <button type="button" onclick="q7()">Check Answer</button> -->
+
+    <h3>Q8</h3>
+    <div class="question">What does the parseInt function do? </div>
+    <div>
+        A. Display a message in a pop-up window.<br>
+        B. Display a message in a pop-up window and get input from a user. <br>
+        C. Convert an integer to text.<br>
+        D. Convert text to an integer.</div>
+    </div>
+    <input type="text" id="q8" placeholder="Enter the correct letter!">
+    <!-- <button type="button" onclick="q8()">Check Answer</button> -->
+
+
+    <h3>Q9</h3>
+    <div class="question">Within an electrical circuit, what does a diode do? </div>
+    <div>
+        A. Allow electricity to flow in one direction only.<br>
+        B. Store electricity. <br>
+        C. Resist the flow of electricity.<br>
+        D. Act like an automated switch.</div>
+    </div>
+    <input type="text" id="q9" placeholder="Enter the correct letter!">
+    <!-- <button type="button" onclick="q9()">Check Answer</button> -->
+
+    <h3>Q10</h3>
+    <div class="question">What does a power supply in a computer do? </div>
+    <div>
+        A. Perform calculations.<br>
+        B. Transfer data. <br>
+        C. Count clock cycles.<br>
+        D. Convert alternating current to direct current.</div>
+    </div>
+    <input type="text" id="q10" placeholder="Enter the correct letter!">
+    <!-- <button type="button" onclick="q10()">Check Answer</button> -->
+
+    <h3>Q11</h3>
+    <div class="question">What does a bus in a computer do? </div>
+    <div>
+        A. Perform calculation.<br>
+        B. Transfer data. <br>
+        C. Temporarily store data.<br>
+        D. Convert alternating current to direct current.</div>
+    </divclass=>
+    <input type="text" id="q11" placeholder="Enter the correct letter!">
+    <!-- <button type="button" onclick="q11()">Check Answer</button> -->
+    <button type="button" onclick="main()">Check Answer</button>
+    <script>
+        let score = 0;
+        document.getElementById("scoreOutput").innerHTML = score;
+
+        function main() {
+            let score = 0;
+            score = q1(score);
+            score = q2(score);
+            score = q3(score);
+            score = q4(score);
+            score = q5(score);
+            score = q6(score);
+            score = q7(score);
+            score = q8(score);
+            score = q9(score);
+            score = q10(score);
+            score = q11(score);
+            document.getElementById("scoreOutput").innerHTML = score;
+
+        }
+
+        function playerName() {
+            let playerName = prompt('What is your name?')
+            document.getElementById('playerNameOutput').innerHTML = playerName.charAt(0).toUpperCase() + playerName
+                .slice(1); //Capitiailze the first letter of the name
+        }
+
+        function q1(score) {
+            if (document.getElementById("q1").value.toUpperCase() === "TRUE") {
+                // alert("Correct!")
+                // let updatedScore = score;
+                score += 100
+                // document.getElementById("scoreOutput").innerHTML = score;
+                return score;
+            } else {
+                // alert("Wrong")
+                // let updatedScore = score;
+                // document.getElementById('scoreOutput').innerHTML = updatedScore;
+                return score -= 50
+
+            }
+        }
+
+        function q2(score) {
+            if (document.getElementById("q2").value.toUpperCase() === "FALSE") {
+                // alert("Correct!")
+                score += 100
+                // document.getElementById("scoreOutput").innerHTML = score;
+                return score
+            } else {
+                // alert("Wrong")
+                score -= 50;
+                // document.getElementById('scoreOutput').innerHTML = score;
+                return score
+            }
+        }
+
+        function q3(score) {
+            if (document.getElementById("q3").value.toUpperCase() === "TRUE") {
+                // alert("Correct!")
+                return score += 100
+                // document.getElementById("scoreOutput").innerHTML = score;
+            } else {
+                // alert("Wrong")
+                return score -= 50
+                // document.getElementById('scoreOutput').innerHTML = score;
+            }
+        }
+
+        function q4(score) {
+            if (document.getElementById("q4").value.toUpperCase() === "TRUE") {
+                // alert("Correct!")
+                return score += 100
+                // document.getElementById("scoreOutput").innerHTML = score;
+            } else {
+                // alert("Wrong")
+                return score -= 50
+                // document.getElementById('scoreOutput').innerHTML = score;
+            }
+        }
+
+        function q5(score) {
+            if (document.getElementById("q5").value.toUpperCase() === "FALSE") {
+                // alert("Correct!")
+                return score += 100
+                // document.getElementById("scoreOutput").innerHTML = score;
+            } else {
+                // alert("Wrong")
+                return score -= 50
+                // document.getElementById('scoreOutput').innerHTML = score;
+            }
+        }
+
+        function q6(score) {
+            if (document.getElementById("q6").value.toUpperCase() === "TRUE") {
+                // alert("Correct!")
+                return score += 100
+                // document.getElementById("scoreOutput").innerHTML = score;
+            } else {
+                // alert("Wrong")
+                return score -= 50
+                // document.getElementById('scoreOutput').innerHTML = score;
+            }
+        }
+
+        function q7(score) {
+            if (document.getElementById("q7").value.toUpperCase() === "A") {
+                // alert("Correct!")
+                return score += 100
+                // document.getElementById("scoreOutput").innerHTML = score;
+            } else {
+                // alert("Wrong")
+                return score -= 50
+                // document.getElementById('scoreOutput').innerHTML = score;
+            }
+        }
+
+        function q8(score) {
+            if (document.getElementById("q8").value.toUpperCase() === "D") {
+                // alert("Correct!")
+                return score += 100
+                // document.getElementById("scoreOutput").innerHTML = score;
+            } else {
+                // alert("Wrong")
+                return score -= 50
+                // document.getElementById('scoreOutput').innerHTML = score;
+            }
+        }
+
+        function q9(score) {
+            if (document.getElementById("q9").value.toUpperCase() === "A") {
+                // alert("Correct!")
+                return score += 100
+                // document.getElementById("scoreOutput").innerHTML = score;
+            } else {
+                // alert("Wrong")
+                return score -= 50
+                // document.getElementById('scoreOutput').innerHTML = score;
+            }
+        }
+
+        function q10(score) {
+            if (document.getElementById("q10").value.toUpperCase() === "D") {
+                // alert("Correct!")
+                return score += 100
+                // document.getElementById("scoreOutput").innerHTML = score;
+            } else {
+                // alert("Wrong")
+                return score -= 50
+                // document.getElementById('scoreOutput').innerHTML = score;
+            }
+        }
+
+        function q11(score) {
+            if (document.getElementById("q11").value.toUpperCase() === "B") {
+                // alert("Correct!")
+                return score += 100
+                // document.getElementById("scoreOutput").innerHTML = score;
+            } else {
+                // alert("Wrong")
+                return score -= 50
+                // document.getElementById('scoreOutput').innerHTML = score;
+            }
+
+        }
+
+        function correct(score) {
+            alert("Correct!")
+            score += 100
+            document.getElementById("scoreOutput").innerHTML = score;
+            return score
+
+        }
+
+        function wrong(score) {
+            alert("Wrong")
+            score -= 50
+            document.getElementById('scoreOutput').innerHTML = score;
+            return score
+        }
+    </script>
+
+</body>
+
+</html>

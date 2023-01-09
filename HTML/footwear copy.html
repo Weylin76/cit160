@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        background-color: aqua;
+    }
+
+    button {
+        display: block;
+    }
+
+    p {
+        display: inline;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>footwear</title>
+    <script>
+        // Defining Table:
+        // Input: User inputs: Hot, Rain, Snow, or any other input
+        // Processing: Evaluates weahter condition to determine shoe type (see output)
+        //Output: If hot = Sandals, rain = Galoshes, Snow = boots, other = shoes
+
+        function checkFootwear() {
+            let weather = document.getElementById("weatherCondition").value;
+            let footwear;
+            switch (weather.toLowerCase()) {
+                case weather = 'hot':
+                    footwear = 'sandals';
+                    document.getElementById("output").innerHTML = footwear.charAt(0).toUpperCase() + footwear.slice(1);
+                    break;
+                case weather = 'rain':
+                    footwear = 'galoshes';
+                    document.getElementById('output').innerHTML = footwear.charAt(0).toUpperCase() + footwear.slice(1);
+                    break;
+                case weather = 'snow':
+                    footwear = 'boots';
+                    document.getElementById('output').innerHTML = footwear.charAt(0).toUpperCase() + footwear.slice(1);
+                    break;
+                default:
+                    footwear = 'shoes';
+                    document.getElementById("output").innerHTML = footwear.charAt(0).toUpperCase() + footwear.slice(1);
+            }
+        }
+
+        function play() {
+            let weather = document.getElementById("weatherCondition").value
+            if (weather == 'rain') {
+                var audio = document.getElementById("audioRain");
+                audio.play();
+                const imgRain = document.createElement("img");
+                imgRain.setAttribute("src",
+                    "https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg"
+                );
+                imgRain.setAttribute("alt", "Picture of rain");
+                imgRain.style.width = "500px";
+                imgRain.style.display = "block";
+                document.getElementById("div1").appendChild(imgRain);
+            } else if (weather == 'snow') {
+                var audio = document.getElementById("audioSnow");
+                audio.play();
+                const imgSnow = document.createElement("img");
+                imgSnow.setAttribute("src",
+                    "https://img.freepik.com/free-photo/view-snowy-mountain-fir-trees-with-blue-sky-background_9083-8044.jpg?w=2000"
+                );
+                imgSnow.setAttribute("alt", "Picture of Snowy outside");
+                imgSnow.style.width = "500px";
+                imgSnow.style.display = "block";
+                document.getElementById("div1").appendChild(imgSnow);
+            } else if (weather == 'hot') {
+                var audio = document.getElementById("audioHot");
+                audio.play();
+                const imgSunny = document.createElement("img");
+                imgSunny.setAttribute("src",
+                    "data:image/jpeg;base64,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"
+                );
+                imgSunny.setAttribute("alt", "Picture of Sunny outside");
+                imgSunny.style.width = "500px";
+                imgSunny.style.display = "block";
+                document.getElementById("div1").appendChild(imgSunny);
+            } else {
+                var audio = document.getElementById("audioOther");
+                audio.play();
+                const imgOther = document.createElement("img");
+                imgOther.setAttribute("src",
+                    "https://wallpapercave.com/wp/46IcIP8.jpg"
+                );
+                imgOther.setAttribute("alt", "Picture of outdoors");
+                imgOther.style.width = "500px";
+                imgOther.style.display = "block";
+                document.getElementById("div1").appendChild(imgOther);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <span>Enter Weather Conditions</span><input type="text" id="weatherCondition"><br>
+        <button type="button" onclick="checkFootwear(), play(), background()">Check Footwear Type</button>
+        <p>Appropriate footwear type:</p>
+        <p id="output"></p>
+        <audio id="audioRain" src="https://www.soundjay.com/nature/sounds/rain-01.mp3"></audio>
+        <audio id="audioSnow" src="https://www.soundjay.com/nature/sounds/footsteps-on-icy-ground-01.mp3"></audio>
+        <audio id="audioHot" src="https://www.soundjay.com/free-music/sounds/heart-of-the-sea-01.mp3"></audio>
+        <audio id="audioOther" src="https://www.soundjay.com/free-music/sounds/cautious-path-01.mp3"></audio>
+    </div>
+</body>
+
+</html>

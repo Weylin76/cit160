@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twenty One</title>
+    <script>
+        function main() {
+            let hand = [10, 5, 8];
+
+            results = twentyOne(hand);
+            document.getElementById("output").innerHTML = results;
+
+            function twentyOne(hand) {
+                let sum = 0;
+                for (let i = 0; i < hand.length; i++) {
+                    parseInt(sum += hand[i]);
+                }
+                if (sum > 21) {
+                    return "bust";
+                } else {
+                    return sum
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="output"></div>
+    <button onclick="main()">run</button>
+</body>
+
+</html>

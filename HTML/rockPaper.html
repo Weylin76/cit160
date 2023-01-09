@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors Tutorial</title>
+</head>
+
+<body>
+    <h2>Computer Choice: <span id="computer-choice"></span></h2>
+    <h2>Your Choice: <span id="user-choice"></span></h2>
+    <h2>Result: <span id="result"></span></h2>
+    <button id="rock">rock</button>
+    <button id="paper">paper</button>
+    <button id="scissors">scissors</button>
+    <br>
+    <br>
+    <input type="button" value="Reload Page" onClick="document.location.reload(true)">
+    <br>
+    <br>
+    <div id="ys">
+        You: 0
+    </div>
+    <div id="cs">
+        Computer: 0
+    </div>
+    <script>
+        const computerChoiceDisplay = document.getElementById('computer-choice')
+        const userChoiceDisplay = document.getElementById('user-choice')
+        const resultDisplay = document.getElementById('result')
+        const possibleChoices = document.querySelectorAll('button')
+        const cs_t = document.getElementById("cs");
+        const ps_t = document.getElementById("ys");
+        let userChoice
+        let computerChoice
+        let result
+
+        var cs = 0;
+        var ps = 0;
+
+        possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+            userChoice = e.target.id
+            userChoiceDisplay.innerHTML = userChoice
+            generateComputerChoice()
+            getResult()
+        }))
+        // ------
+
+
+        // --------
+        function generateComputerChoice() {
+            const randomNumber = Math.floor(Math.random() * 3) + 1 // or you can use possibleChoices.length
+
+            if (randomNumber === 1) {
+                computerChoice = 'rock'
+            }
+            if (randomNumber === 2) {
+                computerChoice = 'scissors'
+            }
+            if (randomNumber === 3) {
+                computerChoice = 'paper'
+            }
+            computerChoiceDisplay.innerHTML = computerChoice
+        }
+
+        function getResult() {
+            if (computerChoice === userChoice) {
+                result = 'its a draw!'
+            }
+            if (computerChoice === 'rock' && userChoice === "paper") {
+                result = 'you win!'
+            }
+            if (computerChoice === 'rock' && userChoice === "scissors") {
+                result = 'you lose!'
+            }
+            if (computerChoice === 'paper' && userChoice === "scissors") {
+                result = 'you win!'
+            }
+            if (computerChoice === 'paper' && userChoice === "rock") {
+                result = 'you lose!'
+            }
+            if (computerChoice === 'scissors' && userChoice === "rock") {
+                result = 'you win!'
+            }
+            if (computerChoice === 'scissors' && userChoice === "paper") {
+                result = 'you lose!'
+            }
+            if (result == 'you win!') {
+                ps += 1
+            } else if (result == 'you lose!') {
+                console.log("ok2")
+                cs += 1
+            } else {
+                cs += 1
+                ps += 1
+            }
+
+            cs_t.innerHTML = ("Computer: " + cs);
+            ps_t.innerHTML = ("You: " + ps);
+            resultDisplay.innerHTML = result
+        }
+    </script>
+</body>
+
+</html>

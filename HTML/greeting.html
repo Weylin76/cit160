@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function changeBackground() {
+            document.body.style.background = 'red';
+        }
+
+        function returnColor() {
+            document.body.style.background = "white";
+        }
+
+        function getOutOfMyHouse() {
+            const name = prompt("What is your name?")
+            alert(`${name.toUpperCase()}, get out of my house!!`);
+        }
+    </script>
+    <title>Greeting Code</title>
+</head>
+
+<body>
+    <h1>Greeting BYU-I Students</h1>
+    <button type="button" onclick="changeBackground()" onmouseleave="returnColor()">Click to change background
+        color</button>
+
+    <h2>Scroll over the house!</h2>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn7y_0Rb9se-3D9g-QeQgQP8w9rBVnw3hwZg&usqp=CAU"
+        alt="House image" onmouseover="getOutOfMyHouse()" style="display:block">
+
+
+
+</body>
+
+</html>

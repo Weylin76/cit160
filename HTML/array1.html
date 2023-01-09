@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Array</title>
+    <script>
+        /* Defining Table
+         * Input: no user input
+         * Processing: Test the addEnds and getMiddle functions by calling them.
+         * Output: The values returned from the addEnds and getMiddle functions.
+         */
+        function test() {
+            let list1 = [17, 8, 9, 5, 20];
+            let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+            // Test the addEnds function by calling it two times.
+            let sum1 = addEnds(list1);
+            let sum2 = addEnds(list2);
+
+            // Test the getMiddle function by calling it two times.
+            let mid1 = getMiddle(list1);
+            let mid2 = getMiddle(list2);
+
+            // Build a string to display to the user.
+            let output =
+                sum1 + '<br>' +
+                sum2 + '<br>' +
+                mid1 + '<br>' +
+                mid2;
+
+            // Display the output string for the user to see.
+            document.getElementById('output').innerHTML = output;
+        }
+
+        function addEnds(list) {
+            for (let i = 0; i < list.length; i++) {
+                let firstNum = list[0];
+                let lastNum = list[list.length - 1]
+                return firstNum + lastNum
+            }
+        }
+
+        function getMiddle(list) {
+            //If list is even:
+            if (list.length % 2 === 0) {
+                for (let i = 0; i < list.length; i++) {
+                    let middleNum1 = list[list.length / 2 - 1]
+                    let middleNum2 = list[list.length / 2]
+                    let results = (middleNum1 + middleNum2) / 2
+                    return results
+                }
+            } else {
+                //If List is Odd
+                for (let i = 0; i < list.length; i++) {
+                    let middleNum1 = list[Math.floor(list.length / 2)]
+                    let results = middleNum1
+                    return results
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" onclick="test()">run</button>
+    <div id="output"></div>
+</body>
+
+</html>
